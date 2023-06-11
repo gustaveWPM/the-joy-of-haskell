@@ -37,6 +37,8 @@ checkAnagram word1 word2 =
 main :: IO ()
 main =
   do
+    putStr "Please enter a word\n> "
     word1 <- getLine
+    putStr "Please enter a second word\n> "
     word2 <- getLine
     print (checkAnagram word1 word2)
