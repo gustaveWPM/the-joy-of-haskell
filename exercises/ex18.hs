@@ -1,6 +1,6 @@
 import Data.Char
 
--- Exercice 17 — Usernames
+-- Exercice 18 — Generalizing with a parameter
 
 newtype Password = Password String
   deriving Show
@@ -24,29 +24,25 @@ cleanWhitespace (x:xs) =
     True -> cleanWhitespace xs
     False -> Right (x:xs)
 
-checkPasswordLength :: String -> Either Error Password
-checkPasswordLength password =
-  case (length password < 10 || length password > 20) of
-    True -> Left (Error "Your password cannot be longer than 20 characters, and shorter than 10 characters.")
-    False -> Right (Password password)
-
-checkUsernameLength :: String -> Either Error Username
-checkUsernameLength username =
-  case (length username > 15) of
-    True -> Left (Error "Username cannot be longer than 15 characters.")
-    False -> Right (Username username)
+checkLength :: Int -> String -> Either Error String
+checkLength int str =
+  case (length str > int) of
+    True -> Left (Error "Input exceeded maximum allowed length.")
+    False -> Right str
 
 validatePassword :: Password -> Either Error Password
 validatePassword (Password password) =
-  cleanWhitespace password
+  Password <$>
+  (cleanWhitespace password
     >>= requireAlphaNum
-    >>= checkPasswordLength
+    >>= checkLength 20)
 
 validateUsername :: Username -> Either Error Username
 validateUsername (Username username) =
-  cleanWhitespace username
+  Username <$>
+  (cleanWhitespace username
     >>= requireAlphaNum
-    >>= checkUsernameLength
+    >>= checkLength 15)
 
 main :: IO ()
 main = do
