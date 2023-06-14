@@ -1,6 +1,5 @@
 import Data.List
 import Data.Char
-import Data.List
 
 -- Exercise 5 — Palindromes
 

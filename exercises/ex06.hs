@@ -1,4 +1,4 @@
-import Data.Char (toLower)
+import Data.Char
 
 -- Exercise 6 — Hacker voice
 
