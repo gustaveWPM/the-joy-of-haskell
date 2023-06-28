@@ -17,6 +17,15 @@ newtype Username = Username String
 data User = User Username Password
   deriving Show
 
+errorCoerce :: Error -> [String]
+errorCoerce (Error err) = err
+
+display :: Username -> Password -> IO ()
+display username password =
+  case makeUser username password of
+    Failure err -> putStr (unlines (errorCoerce err))
+    Success (User (Username username) password) -> putStrLn("Welcome, " ++ username)
+
 passwordErrors :: Password -> Validation Error Password
 passwordErrors password =
   case validatePassword password of
@@ -79,4 +88,4 @@ main = do
   username <- Username <$> getLine
   putStrLn "Please, enter a password:"
   password <- Password <$> getLine 
-  print (makeUser username password)
+  display username password
