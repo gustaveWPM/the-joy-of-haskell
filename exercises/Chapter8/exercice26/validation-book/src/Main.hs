@@ -4,7 +4,7 @@
 import Data.Char
 import Data.Validation
 
--- Exercice 26 — Applicative do
+-- Exercise 26 — Applicative do
 
 newtype Password = Password String
   deriving Show

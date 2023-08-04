@@ -1,6 +1,6 @@
 import Data.Char
 
--- Exercice 20 — Doing Either
+-- Exercise 20 — Doing Either
 
 newtype Password = Password String
   deriving Show

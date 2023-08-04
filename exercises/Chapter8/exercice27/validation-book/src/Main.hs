@@ -7,7 +7,7 @@ import Data.Validation
 import qualified Data.Text as T
 import qualified Data.Text.IO as T
 
--- Exercice 27 — Strings of text
+-- Exercise 27 — Strings of text
 
 newtype Username = Username T.Text
   deriving Show

@@ -1,4 +1,4 @@
--- Exercice 24 — Either is fine
+-- Exercise 24 — Either is fine
 
 module Main (main) where
 import Data.Char

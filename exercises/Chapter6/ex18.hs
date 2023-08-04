@@ -1,6 +1,6 @@
 import Data.Char
 
--- Exercice 18 — Generalizing with a parameter
+-- Exercise 18 — Generalizing with a parameter
 
 newtype Password = Password String
   deriving Show

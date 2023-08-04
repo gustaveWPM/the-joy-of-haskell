@@ -1,6 +1,6 @@
 import Data.Char
 
--- Exercice 17 — Usernames
+-- Exercise 17 — Usernames
 
 newtype Password = Password String
   deriving Show

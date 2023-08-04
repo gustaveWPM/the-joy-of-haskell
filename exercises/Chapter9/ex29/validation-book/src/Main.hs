@@ -3,7 +3,7 @@
 import Data.Char
 import Data.Validation
 
--- Exercice 29 — Constrution function
+-- Exercise 29 — Constrution function
 
 newtype Error = Error String
   deriving (Show)
@@ -31,7 +31,7 @@ display :: Username -> Password -> IO ()
 display username password =
   case makeUser username password of
     Failure err -> putStrLn (errorCoerce err)
-    Success (User (Username username) password) -> putStrLn("Welcome, " ++ username)
+    Success (User (Username username') password) -> putStrLn("Welcome, " ++ username')
 
 passwordErrors :: Password -> Validation Error Password
 passwordErrors password =

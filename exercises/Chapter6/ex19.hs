@@ -1,6 +1,6 @@
 import Data.Char
 
--- Exercice 19 — Non-binding I/O
+-- Exercise 19 — Non-binding I/O
 
 newtype Password = Password String
   deriving Show

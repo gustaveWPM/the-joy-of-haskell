@@ -3,7 +3,7 @@
 import Data.Char
 import Data.Validation
 
--- Exercice 28 — A novel Semigroup
+-- Exercise 28 — A novel Semigroup
 
 newtype Error = Error String
   deriving (Show)
