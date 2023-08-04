@@ -24,7 +24,7 @@ display :: Username -> Password -> IO ()
 display username password =
   case makeUser username password of
     Failure err -> putStr (unlines (errorCoerce err))
-    Success (User (Username username') password) -> putStrLn("Welcome, " ++ username')
+    Success (User (Username username') _) -> putStrLn("Welcome, " ++ username')
 
 passwordErrors :: Password -> Validation Error Password
 passwordErrors password =
